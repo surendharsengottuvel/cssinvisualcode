@@ -1,0 +1,19 @@
+h1
+{
+    color: black;
+    background-color: yellow;
+}
+*
+{
+    color: blue;
+}
+div > p
+{
+    color: black;
+}
+
+div del
+{
+    color: violet;
+}
+
