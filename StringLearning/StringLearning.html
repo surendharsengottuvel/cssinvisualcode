@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>String in JAVA SCRIPT</h1>
+<script>
+    let str1="How to add to string values"
+    let str2="To add two string values see below"
+    let addedstring=str1+str2;
+    console.log(addedstring)
+    console.log(str1.concat(str2))
+    //String Methods in Java Script
+    // concat
+    // replace
+    // slice(start, end)
+    // substring(start, end)
+    // substr(start, length)
+
+    // slice method
+    console.log(str1.slice(0,8)) //=How to a
+    console.log(str2.length) //34
+    console.log(str2.slice(12, 34)) //=tring values see below
+    console.log(str2.slice(-8, -1)) //ee belo
+    console.log(str2.slice(-8)) //ee below
+
+    //Substring
+    console.log(str1.substring(0,8)) //=How to a
+    console.log(str2.length) //34
+    console.log(str2.substring(12, 34)) //=tring values see below
+    console.log(str2.substring(-8)) //To add two string values see below
+    console.log(str2.substring(-8)) //To add two string values see below
+
+    //substr
+    console.log(str1.substr(4,8)) ///to add t
+    console.log(str1.substr(-2)) //es
+    console.log(str1.substr(-6, 2)) //va
+    
+    //replace
+    console.log(addedstring)
+    console.log(addedstring.replace(str2))
+    console.log(str1.replace('How', 'Howw'))
+    console.log(str1.replace('how', 'HOoow')) //notes here h using small so not working
+    let newstring="How how How How How poda dai"
+    console.log(newstring.replaceAll('How', 'now'))
+    console.log(newstring.toUpperCase())
+    console.log(newstring.toLowerCase())
+    console.log(newstring.toLocaleUpperCase())
+
+    let trimlearn="  How how How How How poda dai  "
+    console.log(trimlearn.trim())
+    console.log(trimlearn.trimEnd())
+    console.log(trimlearn.trimStart())
+
+    let amount="my amount 10"
+    console.log(amount.length) //12
+    console.log(amount.padEnd(14, 0)) //my amount 1000
+    let ab="123"
+    console.log(ab.length) //3
+
+    let indexlearn="strive"
+    console.log(indexlearn.charAt(0)) //s
+    console.log(indexlearn.charAt(3)) //i
+    console.log(indexlearn[0]) //s
+    console.log(indexlearn.charCodeAt(3)) // unicodevalue=105
+    console.log(indexlearn.indexOf('e')) //5
+    let index="striveee43433e"
+    console.log(index.lastIndexOf("e")) //13 
+    console.log(str1.search("add")) //7
+    console.log(amount.includes("my")) //true
+    console.log(amount.includes("My")) //false
+
+    let name ='Surendhar'
+    console.log(name.charAt(Math.floor(Math.random()*9+1 )))
+
+</script>
+</body>
+</html>
