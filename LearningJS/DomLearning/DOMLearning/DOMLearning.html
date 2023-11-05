@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hellow</title>
+    <style>
+        body
+        {
+            background-color: rgb(230, 230, 112);
+        }
+        #warppaer
+        {
+            background-color: aqua;
+            margin-top: 10%;
+            margin-left: 25%;
+            margin-right: 25%;
+            text-align: center;
+            border-radius: 20px;
+        }
+        #firstid
+        {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            border-radius: 5px;
+        }
+        #Suren
+        {
+            margin-top: 5%;
+            margin-bottom: 15%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="warppaer">
+        <div>
+            <h1>Celcius to Fahrenheir</h1>
+        </div>
+        <div>
+            <input id="firstid" type="text" placeholder="please enter celcius value">
+        </div>
+        <div>
+            <button id="suren" onclick="convert()">Calculate</button>
+        </div>
+        <div id="Suren">
+            
+        </div>
+    </div>
+    <Script>
+        function convert()
+        {
+            const celciusvalue =  Number(document.getElementById('firstid').value)
+            const fahrenheit =    celciusvalue*9/5+32
+            let resultvalue = document.getElementById('Suren')
+            resultvalue.innerHTML=fahrenheit.toFixed(2) + " degree fahrenheir"
+        }
+    
+    </Script>
+    
+</body>
+</html>
