@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Learning</title>
+    <style>
+        #firstm
+        {
+            margin-top: 10%;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(241, 241, 155);">
+    <h1>Arrays Learning</h1>
+    <div id="firstm">
+        <div>
+            <h3>Type of sentence</h3>
+        </div>
+        <div>
+            <textarea name="" id="areaid" cols="30" rows="10"></textarea>
+        </div>
+
+        <div id="surenn">
+
+        </div>
+
+        <div>
+            <button onclick="myfunction()">calculate words</button>
+        </div>
+    </div>
+
+    <script>
+      function myfunction()
+      {
+        let valuess = document.getElementById('areaid').value
+        console.log(valuess)
+        let lentharr = valuess.split(" ")
+        console.log(lentharr)
+        let totalword=lentharr.length
+        console.log(totalword)
+       let result = document.getElementById('surenn')
+       result.innerHTML=totalword 
+
+      }
+
+
+
+        let newnumber=[1, 343, 343, 343, 3434, 343, 343, 3243, 23535, 353, 353, 353, 353]
+        console.log(newnumber.indexOf(23535))
+        console.log(newnumber.length)
+        console.log(newnumber.length-1)
+        console.log(newnumber[12])
+
+        let arr =[34, 35, 22, 99, 'a', 'abbc', [23, 'suren', 'naveen'], 23]
+        console.log(arr.length)
+        console.log(arr[6]) //[23, 'suren', 'naveen']
+        console.log(arr[6][1]) //suren
+
+        let Matrix =[["suren", "Mani", "Naveen"], ["Gow", "Nav", "Bhart"], [22, 33, 44],[21, 31, 43]]
+        console.log(Matrix[0][2]) //=Naveen
+        console.log(Matrix[Matrix.length-1][0]) //=21
+        
+        let workout=[]
+        workout.push(21) //push method is to add values in array
+        console.log(workout)
+        workout.push(12, 23, 98, [12, 12], 54, 23)
+        console.log(workout) //(7) [21, 12, 23, 98, Array(2), 54, 23]
+        workout.pop() // to remove last index of the arry
+        console.log(workout) //[21, 12, 23, 98, Array(2), 54]
+        // if you use console.log(workout.pop()) *** it will remove 54 what index values had removed it will return
+        //same as shift if you use console.log(workout.shift()) *** it will remove first  index values had removed it will return
+        workout.shift()
+        console.log(workout) //(5) [12, 23, 98, Array(2), 54] see here zeroth index has been deleted
+        console.log(workout.shift()) //like as above said it will show which value has deleted it will show 12
+
+        //*** UNSHIFT - ADD ELEMENT TO THE START OF THE ARRAY
+        // RETURN NEW LENGTH
+
+        workout.unshift(21, 23)
+        console.log(workout) // as above said unshift will add starting of the array
+        //if you put console.log(workout.unshift(21, 23)) it will not show arrya value but it will retun new lengthh
+
+        //Learn SPLICE method why we need to use splice instead of delete
+
+        let deletelearn=[12, 43, 22, 55, 33, 55, 22]
+        console.log(deletelearn.length)
+        delete deletelearn[3]
+        console.log(deletelearn) //[12, 43, 22, empty, 33, 55, 22]
+        //look at the deleted index showing empty that why dont need to use delete
+
+        //**** splice LEARNING***//
+        let nameofarray=[12, 22, 33, 55, 43, 33, 33, 54]
+        console.log(nameofarray.splice(0, 1)) //it will show only [12], because consolve only return value
+        //*** here note important
+        //splice(0,1) 0 will consider as index of the array and after , used 1 is mention how may value need to delete
+        console.log(nameofarray) //[22, 33, 55, 43, 33, 33, 54]
+        nameofarray.splice(0, 3)
+        console.log(nameofarray) //[43, 33, 33, 54]
+
+        //SPLICE METHOD CAN REPLACE, DELETE, INSERT Splice(1,2,3)
+        //1st Parameter - Starting of the Index
+        //2nd Parameter - no of element to be deleted from the first mentioned starting index
+        //3rd(or more) paramter - values from the starting index
+
+        //Learning replace method
+        let normalarr=[12, 11, 13, 14, 15]
+        normalarr.splice(1,1,"a")
+        console.log(normalarr) //[12, 'a', 13, 14, 15] //here only one value has been replace
+        normalarr.splice(2,2,"b","c")
+        console.log(normalarr) //[12, 'a', 'b', 'c', 15]
+
+        // Learning inserting method
+        let insertarr =[0,2,4,3] 
+        insertarr.splice(1,0,"a","b") //here why second parameter is zero because second is deleteindex
+        console.log(insertarr) //(6) [0, 'a', 'b', 2, 4, 3]
+
+        //splice method
+        let splicearr=[111,22,33,44,55,66,7]
+        splicearr.splice(0,1)
+        console.log(splicearr) //(6) [22, 33, 44, 55, 66, 7] note here splice method not coniser
+        //second mentioned 1 if you put (0,4) it will consider (0,1,2,3) four values not accepted arrysplice
+
+        //reversemethod
+        let suren=[99,88,77,66,55]
+        suren.reverse()[22, 33, 44, 55, 66, 7]
+        console.log(suren)
+
+        // High important
+        //Join method will convert array to string
+        //splice method will conver string to array
+
+        //let see
+        let alphapet=['a','b','c','d','e','f','g','h','i','j']
+        console.log(alphapet)
+        let stringalphapet=alphapet.join();
+        console.log(stringalphapet) //a,b,c,d,e,f,g,h,i,j
+
+        let arrayalphapet=stringalphapet.split(",")
+        console.log(arrayalphapet) //(10) ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+        let firstarry=[1,2,3,4,5]
+        let secondarray=[6,7,8,9,10]
+        let joinedarray=[firstarry,secondarray]
+        console.log(joinedarray) //(2) [Array(5), Array(5)]
+        let newjoinedarray=[firstarry+secondarray] //do not use this
+        console.log(newjoinedarray)
+        console.log(newjoinedarray.length)
+        let tojoinarray=[firstarry.concat(secondarray)] //this method also wrong
+        console.log(tojoinarray)
+
+
+        //to join to arrays concat or spread
+        let properjoin=firstarry.concat(secondarray);
+        console.log(properjoin) //(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let secondproperjoin=[...firstarry,...secondarray]
+        console.log(secondproperjoin) //(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        
+        //Exercise
+
+        let exercisearr=[5,8,10,7,9,11]
+
+        //replace 7,9,1 with 17,19,111
+        exercisearr.splice(3,3,17,19,111)
+        console.log(exercisearr) //(6) [5, 8, 10, 17, 19, 111]
+        //insert 100 in the beginning
+        exercisearr.unshift(100)
+        console.log(exercisearr) //(7) [100, 5, 8, 10, 17, 19, 111]
+        console.log(exercisearr.length) //7
+        //insert 200 in last but one position
+        exercisearr.splice(6,0,200)
+        console.log(exercisearr) //(8) [100, 5, 8, 10, 17, 19, 200, 111]
+        //add 1000 a the end
+        exercisearr.push(1000)
+        console.log(exercisearr) //(9) [100, 5, 8, 10, 17, 19, 200, 111, 1000]
+        //insert 0 in the middle, user att.length to find middle posiition
+        console.log(exercisearr.length)//9 
+        
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
