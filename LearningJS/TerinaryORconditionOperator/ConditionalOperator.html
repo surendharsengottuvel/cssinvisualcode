@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Terinary Or Conditional Operator</h1>
+    <h2>Palindrome Checker</h2>
+    <div style="background-color: rgb(233, 48, 48); text-align: center;">
+        <div>
+            <h3>Palindrome Checker</h3>
+        </div>
+        <div>
+            <input type="text" id="surenn">
+        </div>
+        <div id="resultt">
+
+        </div>
+        <div>
+            <button onclick="funpal()">Resutl</button>
+        </div>
+    </div>
+    <script>
+        let a=1
+        let b=22
+        let max=a>b?a:b
+        console.log(max)
+    function funpal()
+    {
+        let resulttt=document.getElementById('resultt')
+        let value =document.querySelector("#surenn").value
+    console.log(value)
+    let  withoutspaceuserinput = value.replace(/\s/g,'')  //value.replaceALL(/\s/,'') notes 8888
+    console.log(withoutspaceuserinput)
+    let splitvalue=   withoutspaceuserinput.split("")
+    console.log(splitvalue)
+    let reverstarry= splitvalue.reverse();
+    console.log(reverstarry)
+    let reversevalue=reverstarry.join().replaceAll(",","")
+    if (withoutspaceuserinput==reversevalue)
+    {
+        resulttt.innerHTML="palindrom"
+    }
+    else
+    {
+        resulttt.innerHTML="not palindrom"
+    }
+    
+        
+        
+        
+        
+    }
+    </script>
+</body>
+</html>
