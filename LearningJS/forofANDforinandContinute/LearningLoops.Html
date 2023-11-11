@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Learn ForOF ForON continue</title>
+</head>
+<body>
+    <h1>Let's Learn ForOF ForON continue</h1>
+    <script>
+        
+        //continue method in js
+        let myarray=['suren', 'naveen', "mani", "ganesh", 'aruvi', 'gow']
+        for(let i=0; i<myarray.length; i++)
+        {let output=''
+          if(myarray[i]=="gow")
+          continue  
+        output+=myarray[i]
+        console.log(output) //'suren', 'naveen', "mani", "ganesh", 'aruvi'
+        }
+        for(let i=0; i<myarray.length; i++)
+        {let output=''
+        //   if(myarray[i]=="gow")
+        //   continue  
+        output+=myarray[i]
+        console.log(output) //'suren', 'naveen', "mani", "ganesh", 'aruvi', 'gow'
+        }
+        //second method
+        for(let i=0; i<=10; i++)
+        {
+            if(i%3!==0)
+            continue
+            console.log(i) // 0,3,6,9
+        }
+
+        // For of method this method is useed fo array
+        let myarr=['suren', 'mani', 'rani', 'kvi']
+        for(let values of myarr)
+        {
+            console.log(values)  //'suren', 'mani', 'rani', 'kvi'
+        }
+        
+        //for in method this method is used for object
+        let Item=
+        {
+            name:"Surendhar",
+            age:25,
+            hobbies:['playing cricket', 'Watching movie'],
+            itemObject:{fatername:'Sengodu', mothername:'Santi'}
+        }
+        for(let valuess in Item)
+        {
+            console.log(Item[valuess]) //note this method is to consolve this values itms[values]
+            
+        }
+        let newitem=
+        {
+            name:"Surendhar",
+            age:25,
+            hobbies:['playing cricket', 'Watching movie'],
+            itemObject:{fatername:'Sengodu', mothername:'Santi'}
+        }
+        //square bracket notation
+        console.log(newitem['name']) //=Surendhar ***here square bracket notation inside array need to use single or double quotations
+        newitem['name']='Surenthiran Sengottuvel'
+        console.log(newitem.name) //Surenthiran Sengottuvel    
+        newitem.name
+
+        //here we are learning difference between squate notations and dot notations
+        let key='name'
+        newitem[key] = 'Santhi surendhar sengottuvel'
+        console.log(newitem) //look new variable used squate notatin key value changed here
+        newitem.key='Suren'
+        console.log(newitem) //but dot notation used key values cant changed in object values
+
+    </script>
+</body>
+</html>

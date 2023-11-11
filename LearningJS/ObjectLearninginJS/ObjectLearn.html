@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Object in JS</title>
+</head>
+<body>
+    <h1>Learning JAVA Script Objects</h1>
+    
+
+
+    <script>
+        //Learning isNaN
+        while(true)
+        {
+            let Numberss=Number(prompt("please enter a number"))
+            
+             if(!isNaN(Numberss))
+            break;
+        }
+
+
+        //there is to way to create an Object
+        //First Way
+        let Item=
+        {
+            name:"Surendhar",
+            age:25,
+            hobbies:['playing cricket', 'Watching movie'],
+            itemObject:{fatername:'Sengodu', mothername:'Santi'}
+        
+        }
+        Item.age=24
+        Item.returnable= true
+        console.log(Item)
+        //Second Way
+        let item2=new Object;
+        item2.name="Devipriya",
+        item2.age=20,
+        item2.hobbies=['eatingg', 'eating', 'eating']
+        console.log(item2)
+        //write Here the most important think
+        //how to build a function in object
+        let details=
+        {
+         name:'surenthiran',
+         age:25,
+         hobbies:['eatingg', 'eating', 'eating'],
+         familydetails:{Fathername:'Sengodu', Mothername:'Santhi'},
+         tolist: function()
+         {familydetails='suren'     //dai please not why here i am provide familydetails because above mentioned property familydetails cant call in the tolist function
+            console.log(familydetails)
+         },
+         anothervaryemthod()
+         {
+            console.log('this is the easy form of function above mentioned tolist is old')
+         }
+        }
+        console.log(details)
+        console.log(details.tolist())
+        details.anothervaryemthod()
+
+        //Exercisse - User Object
+        //create user object. define appropriate properties and method
+        //Try accessing/modifying/addeing new values
+        let userdetails=
+        {
+            name:'Surenthiran',
+            password:'surendhar@123',
+            email:'surensen@gamil.com',
+            tologing: function()
+            {
+                console.log('to login if your are previous user you can enter username and password and login')
+
+            },
+            toregister()
+            {
+                console.log('if you are newly entering the webside you just register your name')
+            }
+        }
+        console.log(userdetails.name)
+        userdetails.password='surendharsengottu@gmail.com'
+        userdetails.tologing();
+        userdetails.toregister();
+
+    </script>
+    
+</body>
+</html>
