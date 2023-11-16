@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown Exercise</title>
+</head>
+<body style="text-align: center;">
+    <h1>Learning how to add dropdown in select via java script</h1>
+
+    <div style="margin-left: 3%; margin-top: 10%;">
+        <select id="dropselect">
+            <option value="select">select</option>
+            
+        </select>
+        <br>
+        <br>
+        <br>
+
+        <li id="listdrop">
+            Our College course list
+        </li>
+            
+
+    </div>
+    <script>
+        let arry=['Chennai', 'Mumbai', 'Kolkatta', "Bangalore", 'Delhi']
+       let toselect = document.getElementById('dropselect')
+        arry.forEach(value=>
+        {
+            let createdrop=document.createElement('option')
+            createdrop.textContent=value
+            createdrop.value=value
+            toselect.appendChild(createdrop)
+        })
+
+        let newarr=['ECE','CSE','IT','EEE','MECH','CIVIL']
+       //EX1 //added tis element to a list in himl
+        newarr.forEach(value=>{
+            let orderlist=document.createElement('ul')
+            orderlist.textContent=value
+            document.getElementById('listdrop').appendChild(orderlist)
+        })
+        //EX2 input=[6,-5,7,-2,4,6,-1]
+        //find the sum of positive number only
+        let input=[6,-5,7,-2,4,6,-1]
+        console.log(input)
+        let sum=0
+        input.forEach(sumvalue)       
+       function sumvalue (value)
+        {
+            
+            if(value<=0)
+            {
+                return
+            }
+           console.log(sum=sum+value)
+        }
+        console.log(input)
+
+        let newarray=[6,-12,7,-22,4,43,-1]
+        let total=0
+        newarray.forEach(value => 
+        {
+            if(value>=0)
+            {
+                return
+            }
+            console.log(total+=value)
+        })
+   
+       
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+    </script>
+    
+    
+</body>
+</html>

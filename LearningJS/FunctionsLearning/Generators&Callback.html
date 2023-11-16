@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator</title>
+</head>
+<body>
+    <h1>Learning Generator in Java Script</h1>
+    <p></p>
+    <span style="text-align: center;"></span>
+    <h2></h2>
+    <script>
+        //Generator is Java script
+        function* gettingrandonvalue()
+        {
+            let index=0
+        
+            while(true)
+            {
+                yield index++
+            }
+        }
+        let gent= gettingrandonvalue();
+        console.log(gent.next().value)
+        console.log(gent.next().value)
+        console.log(gent.next().value)
+        console.log(gent.next().value)
+
+        //Callback function
+        function newfunctin(a,b)
+        {
+            return a+b
+        }
+        function anotherfunction(z, newfunctin)
+        {
+            return(z+newfunctin)
+        }
+        console.log(anotherfunction(2, newfunctin(7,1)))
+
+        let getrandomvalue=()=>
+        {
+           return Math.floor(Math.random()*5)
+        }
+        let callbackfun=(callback)=>
+        {
+            console.log('this is my random value :' + callback)
+        }
+        callbackfun(getrandomvalue())
+
+        let wantupdate=document.querySelector('p')
+        let myfunction=()=>
+        {   
+            return Math.floor(Math.random()*5)
+        }
+        let innerfunction=(myfunction)=>
+        {
+            if(myfunction==1)
+            {
+                let yourname=prompt("What is your name")
+                wantupdate.innerHTML=yourname   
+            }   
+        }
+        innerfunction(myfunction())
+
+         let consolefun=(name)=> //Notes here is easy way to understand callback function
+        {                        //veryimportan *************
+            console.log("hello", name)
+        }
+        let innnerhtmalfun=(name)=>
+        {
+          let tochangee = document.querySelector('span')
+          tochangee.innerHTML='hellow ' + name
+        }
+
+        let Mainfunction=(callbackconsolefun)=>
+        {
+            callbackconsolefun('Naveen')
+            
+        }
+        Mainfunction(consolefun) //note here you only called function name yu declarted name value inside the main function
+        Mainfunction(innnerhtmalfun) //note here you only called function name yu declarted name value inside the main function
+
+        //after watched above //see here
+
+        let inner=(name)=>
+        {
+           let another= document.querySelector('h2')
+           another.innerHTML="Your are good " + name
+        }
+        let main=(callss)=>
+        {
+           let rule =document.querySelector('h2')
+        }
+        main(inner('surenthiran'))
+
+        //here not instead of parameter here we are using function
+
+        // let greetconsole=(name)=>
+        // {
+        //     console.log('welcome total function as parameter ' + name)
+
+        // }
+        function greet(greetback)
+        {
+            greetback('suren')
+
+        }
+        // greet(greetconsole)
+        greet(name=>
+        {
+            console.log('welcome total function as parameter ' + name)
+
+        })
+
+        let onecallbackusing =(name)=>
+        {
+            console.log("your user name is "+name)
+        }
+        let importantfunc =(getting)=>
+        {
+            getting('suren')
+
+        }
+        importantfunc(onecallbackusing)
+
+        
+
+        //**********
+            //Learning Foreach method
+               //*****
+        // In for each method foreach() inside the paranthesis we need to give one funcionname
+        
+        let arrayvalue=['surendhar', 'naveen', 'mani', 'ravi']
+        let print=(val)=>
+        {
+            console.log(val)
+        }
+        arrayvalue.forEach(print)  //here for you first create function arter only use foreach
+        
+        let arrs=[2,4,5,6,7,9]
+        let addfun=(vall)=>
+        {
+            console.log(vall)
+        }
+        arrs.forEach(addfun)
+
+
+
+        
+         
+
+
+
+
+    </script>
+</body>
+</html>

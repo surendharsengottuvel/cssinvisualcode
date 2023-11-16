@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back Learning</title>
+</head>
+<body>
+    <h1>Call Back function</h1>
+
+    <script>
+        let consolefuntion=(name)=>
+        {
+        console.log('Hi '+ name +" Welcome to our website")
+        }
+        let mainfunction=(consolefun, secondpara)=>
+        {
+            consolefun("Naveen")
+            console.log(secondpara +" Welcome on board")
+
+        }
+        mainfunction(consolefuntion, "suren") //Hi Naveen Welcome to our website
+                                           //suren Welcome on board 
+
+        ///////
+        // instead of creating callbackfunction we can create inside a functin                                   
+
+        let newmainfunc=(name)=>
+        {
+            name('Jothi Krishnan')
+
+        }
+        newmainfunc(name =>
+        {
+            console.log('Hi '+ name +" Welcome to our website")
+        })
+
+        //***secondexamble
+
+        let callingfunction=(namessof)=>
+        {
+            namessof('Godse')
+
+        }
+        callingfunction(name =>{
+            console.log("Ghandhi has been killed by" + name)
+        })
+
+        //it has been written by myself
+
+        let difunction=(firstarg, namefun)=>
+        {
+            console.log(firstarg)
+            namefun('Hellow, surenthiran')
+            
+        }
+        difunction("$ Makes Many T", callbackname => //here while declarting string value instead of argument not supporting check onece
+        {
+            console.log(callbackname + "Super your going correct way")
+        })
+
+        //for each method in js maximum we can using foreach with
+        
+        let arrays=['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+        arrays.forEach(printt) //calll bck function
+        function printt(valu)
+        {
+            console.log(valu)
+        }
+
+        let firstarray=['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+        firstarray.forEach(value =>{ // declarated fat arrow function 
+            console.log(value.toUpperCase())
+        })
+
+        let secondarr=['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+        console.log(secondarr) //(5) ['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+
+        secondarr.forEach(toupperfun)
+        function toupperfun(value,index,array)
+        {
+            array[index]=value.toUpperCase()
+        }
+        console.log(secondarr) //(5) ['SURENTHIRAN', 'SANTHI', 'SENGOTTUVEL', 'PUSHPA', 'DEVI']
+
+
+        let thirdarry=['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+        thirdarry.forEach((value,index,array) =>{ //while passing this argument you need to follow tthe order value,index,array
+            array[index]=value.toLowerCase()    //note whe we are passing value,index,array because we are changing todall array
+        })
+        console.log(thirdarry) //(5) ['surenthiran', 'santhi', 'sengottuvel', 'pushpa', 'devi']
+
+
+    </script>
+
+    
+</body>
+</html>

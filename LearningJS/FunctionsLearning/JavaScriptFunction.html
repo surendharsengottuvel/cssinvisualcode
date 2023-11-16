@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script functions</title>
+</head>
+<body>
+    <h1>Java Script important function</h1>
+    <script>
+        function myfirstfunctin() //this is called funcation declaration
+        {
+            console.log('Manivannan')
+        }
+        myfirstfunctin()
+
+        function togetproduct(a, b, c)
+        {
+            return(a*b*c)
+        }
+        console.log(typeof(togetproduct)) //function
+        console.log(togetproduct) //here togetproduct act as variable so it will returen the totall function 
+        //togetproduct(a, b, c)
+        // {
+        //     return(a*b*c)
+        // } //while calling togetproduct without bracket it will show only function declaration
+        console.log(togetproduct(8,6,2)) //96
+        
+        function newfunctin(a,b)
+        {
+            return a+b
+        }
+        function anotherfunction(z, newfunctin)
+        {
+            return(z+newfunctin)
+        }
+        console.log(anotherfunction(2, newfunctin(7,1)))
+
+        //***** Learning Hoisting ***////
+        console.log(Getresult(3,19)) //22
+        function Getresult(a, b) {
+            return a+b
+        }
+        //note here first i called the funtion with parameter, after only i declared that funcion
+        //but js enterpruter provide perfect output this is called hoisting
+
+        //function with default parameter learning
+        function welcomefunction(name='all')
+        {
+            console.log("Welcome " + name)
+        }
+        welcomefunction() //Welcome all //here default parameter is working "all"
+        welcomefunction('surenthiran') //Welcome surenthiran
+        
+        //checkingfunction('notworking') //***note its not working so while using hoisting after declared a function then only call the function
+       
+        function checkingfunction()
+        {
+            console.log("cheking is "+chek)
+        }
+        checkingfunction(chek='working')
+
+
+
+        //recursion - functin calling itself
+        
+        function findfactorial(n)
+        {
+            if(n==1)
+            return 1
+        return n*findfactorial(n-1)
+        }
+        console.log(findfactorial(6))
+        console.log(6*5*4*3*2)
+
+        //function Expression
+        let OddorEven = function(n)
+        {
+        if(n%2==0)
+        {
+            return 'even'
+        }   
+        else return "odd"
+        }
+        console.log(OddorEven(7)) //odd
+        console.log(OddorEven(8)) //even
+        //In function Expression you are creating a function like using varibale see oddoreven is like a variable
+        //*** important note while using function Expression you cant use hoising but declaration you can use
+        //while using default parameter is declartion dont use hoisting after declarted the function with default
+        //parameter then only give argument
+
+        let arry=[1,2,3,4,5,6,3,32,32,32,53,44,22,22]
+        let togettotalproduct=function(arry)
+        {
+            let sum=0
+            for(let valuess of arry)
+            {
+               sum +=valuess
+            }
+            return sum
+        }
+        console.log(togettotalproduct(arry))
+
+        let togetvolume=function(l,b,h)
+        {
+            return l*b*h
+        }
+        console.log(togetvolume(3,5,6)) //90
+
+        //here Learning Arrow function
+        let volume=(l,b,h)=>
+        {
+            return(l*b*h)
+        }
+        console.log(volume(20,10,6)) //1200
+
+        let newarry=[1,2,3,4,5,6,3,32,32,32,53,44,22,22]
+        let productof=(array)=>
+        {
+            let sum=0
+            for(let values of array)
+            {
+                sum+=values
+            }
+            return sum
+        }
+        console.log(productof(newarry)) //261
+        //note above array function there is only one parameter if only one parameter
+        //in this arrow function we dont use even square braket also
+        let sumvalue= arr =>
+        {
+            let sum=0
+            for(let values of arr)
+            {
+                sum+=values
+            }
+            return sum
+        }
+        console.log(sumvalue(newarry)) //261
+
+        //note in arrow function there is no argument means see below
+        let emptyfunction = ()=>
+        {
+            console.log('its working');
+        }
+        emptyfunction();
+
+        //note in arrow function there only one lines of derivation means 
+        //we dont even use curly brackets and return key value
+
+        let volumess=(l,b,h)=>
+        {
+            return(l*b*h)
+        }
+        console.log(volumess(20,10,6)) //1200
+
+        let voluesofrectangular=(l,b,h)=>  l*b*h
+        console.log(voluesofrectangular(2,5,3)) //30
+
+        let areaofcircle = r => Math.PI*r*r
+
+        console.log(areaofcircle(5))
+
+        //*********
+        //Variable Argument or Rest Parameters
+        let togetmanyarguementPRODUCT=(...args) =>
+        {
+            let prod=1
+            for(let values of args)
+            {
+                prod *=values
+            }
+            return prod
+        }
+        console.log(togetmanyarguementPRODUCT(2,34,4,5)) //1360
+
+        let input=[1,2,3,334,32,2,3,44,22]
+
+        let togetprod = (...input)=>
+        {
+            let sum=0
+            for(let val of input)
+            {
+                sum+=val
+            }
+            return sum //443
+        }
+        console.log(togetprod(...input)) //here you spread so you may used in arguent also spread because then only it will conver as array
+
+        //notes very important**********
+        let withoutpassingarugment =function() //here we are not mentioned any argument in the paranthasis
+        {                                      //instead of function() you cant used fat arrow function, if you want once try it not workingg
+            let sum=0
+            //console.log(arguments) //[2, 3, 4, 99, 3, 22, 44, 2, 312, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+            for(let i=1; i<arguments.length; i++)
+            {
+                sum=sum+arguments[i]
+            }
+            return sum
+
+        }
+        console.log(withoutpassingarugment(2,3,4,99,3,22,44,2,312))
+
+
+        
+    </script>
+</body>
+</html>
