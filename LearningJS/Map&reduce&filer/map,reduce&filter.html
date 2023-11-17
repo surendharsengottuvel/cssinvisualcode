@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map reduce filer</title>
+</head>
+<body>
+    <h1>Map Reduce Filer in java script Arrays</h1>
+
+    <script>
+        //Map - executes callback for each array
+        //element and returns new array
+
+        //****
+        //note map is iterating array values and provide
+        //new array 
+        //but  foreach only iterate for provide (new arry)
+
+        //to calculate usd to inr using forEarch
+        let INRvalue=[1,10,20]
+        INRvalue.forEach((value,index,array)=>
+        {
+            array[index]=value*83 //note here we only changed the arr
+        })
+        let usvalue=INRvalue 
+        console.log(usvalue)//[80,830,1660]
+
+        //to calculate dollar value using Map
+
+        let indianrupee=[822, 997, 222, 5000]
+        let usdoller= indianrupee.map(value=> value/83)
+        console.log(usdoller)
+
+        let arryofobjecct=[{name:'surenthiran', age:20},
+                            {name:'sengodu', age:44},
+                            {name:'santhi', age:43} ]
+                let agesonly=arryofobjecct.map(mapping)
+                function mapping(value)
+                {
+                    return value.age
+                }
+                console.log(agesonly)
+                
+                
+                //filter Learning
+                let thingsnameandvalue=[{name:'Ravai', cost:23},
+                                        {name:'Veet', cost:55},
+                                        {name:'Maida', cost:28}]
+
+                let belowthirday=thingsnameandvalue.filter(value => value.cost>=30)
+                console.log(belowthirday)
+
+
+
+            //Reduce - executes reducer callback
+            //         and returns accumated result
+            //basically reduce method is used for one many value having array to reudce that vvalue
+
+            let simplearray=[12,33,82,99,66,52,6,929]
+            let totalofsimplearry=simplearray.reduce(reducefun,1000)
+            //value is total, element=iterating obe by one 12,22,    
+            function reducefun(value,element,index,array) //value=total element=12,12 index=22 in index
+            {                                             //array is total arrya      
+                return value+element                      //here we only used total and element  
+            } //here why is used 1000 i ordered here added 1000 with iteraion // if required we can used index and arrya also  
+            console.log(totalofsimplearry) //   1279
+
+            let twodimentionalarrya=[['a', 'b', 'c'],['c','d','f'],['d','f','g']]
+
+            console.log(twodimentionalarrya.flat()) //array.flat() method
+                                                    //will convert two dimentional array to single dimentional
+                                                    
+            let count=twodimentionalarrya.flat().reduce(calculating,{})
+            
+            function calculating(accumator, currentvalue)
+            {
+                if(accumator[currentvalue])
+                accumator[currentvalue]++
+                else
+                accumator[currentvalue]=1
+            return accumator
+            }
+            console.log(count)
+
+            let ownarry=[[1,3,5,6],[2,4,2,23],[3,89,22]]
+
+            let total=ownarry.flat().reduce((accumator,currentvalue)=>
+            accumator+currentvalue,10000)
+            console.log(total)
+            let totalls=0
+
+            let seperate=ownarry.flat().reduce(
+                (accumator,currentvalue)=>
+                {
+                    if(currentvalue>=22)
+                    {
+                        return accumator
+                    }
+                    return accumator+currentvalue
+                }                
+            )
+            console.log(seperate)
+
+            let object={'a':1, 'b':1}
+            object['c']=1
+
+            let exercisearray=[['a', 'b', 'c'],['c','d','f'],['d','f','g']]
+
+
+           let naveen= exercisearray.flat().reduce(
+                (accumator, currentvalue)=>
+                {
+                    if(accumator[currentvalue])
+                    accumator[currentvalue]++
+                    else
+                    accumator[currentvalue]=1
+
+                return accumator
+                },{})
+                console.log(naveen)
+
+                let objectclass=[{name:'suren', age:25, color:'black'},
+                                  {name:'sengodu', age:49, color:'black'},
+                                  {name:'Devi', age:20, color:'white'},
+                                  {name:'Santhi', age:48, color:'white'},
+                                  {name:'Pushpa', age:70, color:'black'}]
+
+               let ass= objectclass.filter(
+                (value)=>
+                {
+                    if(value.age>=30)
+                    {
+                        return value
+                    }
+                    
+                }).map(value=> value.name.toUpperCase())
+                console.log(ass)
+
+                let alphabetarry=[['a', 'a','c'],['c','d','b'],['a','g','e,'],['b','c','a'],['b','a','d']]
+
+                let finaloutput=alphabetarry.flat().reduce(tocalculate, {})
+
+                function tocalculate(accumator,currentvalue) 
+                {
+                    if(accumator[currentvalue])
+                    accumator[currentvalue]++
+                    else
+                    accumator[currentvalue]=1
+                return accumator
+                }
+                console.log(finaloutput)
+
+                //exercise
+                //(i) remove duplicate form the below array
+
+                let duplicatearray=[4,6,2,3,1,1,3,5,7,8,4,3]
+                let withoutdup= duplicatearray.reduce(
+                (p, c)=>
+                {
+                    console.log(p.indexOf(c))
+                    if(p.indexOf(c)===-1) //here why we index of c===-1
+                    {                     //because if we asking without having arryavalue index  
+                        p.push(c)         //it will return -1  
+                    }
+                    return p
+                }    
+                ,[])
+                console.log(withoutdup)
+                
+1               //(ii)duplicatearray the sume of positive numbers onl
+
+                let collopsearray=[6,-5,7,-2,4,6,-1]
+                let summa=0
+                let totalvalue=collopsearray.filter(
+                    x=> {
+                        if (x<=0) {
+                            return x
+                        }
+                        summa +=x
+                        return summa
+                    }
+                )
+                console.log(summa)
+
+                //(iii) Name="Robert Andrew George"
+                //result:RAG
+                //abbreviate by gathering positive numbers only
+
+                let Name="Naveen Kumar Vel Murugan"
+                let tostringg=Name.split(' ')
+                console.log(tostringg)
+                let outputis=tostringg.reduce(
+                    (accumator,currentvalue)=>
+                    {
+                       return accumator+ currentvalue.charAt(0)
+                    }
+                ,"")
+                console.log(outputis)
+                
+
+                
+                
+
+                
+
+
+                
+
+
+
+            
+
+
+            
+        
+
+        
+    </script>
+    
+</body>
+</html>
