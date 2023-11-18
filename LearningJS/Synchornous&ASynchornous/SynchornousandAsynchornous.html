@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous and ASynchronous</title>
+</head>
+<body>
+    <h1>Synchronous and ASynchronous</h1>
+    <script>
+        //bascially java script will work a synchronous
+        console.log('Naveen')
+        console.log('Surendhar')
+        console.log('Kavin Kumar')
+
+        //the output will get one bye one
+        //Naveen
+        //Surendhar
+        //Kavin Kumar //if there is any error is the
+        setTimeout(() => {console.log('Its working')},3000);
+        //with help of js script Settimeout and set interval
+        //we can you js as asynchronas with the help of setTimeout and setInterval
+
+        //(i) call stack => asynchronous call will execut one by one if set timeout function is there it will inform to brower
+        //(ii) Browser=>the browser will wait that function and send to event loop
+        //(iii) Event loop => the event loop will send to again call stack as mentioned timeline then that will execute
+        
+        setInterval(() => {
+         console.log("welcome")   
+        }, 3000); //every two second js will send the output welcome
+
+    </script>
+</body>
+</html>

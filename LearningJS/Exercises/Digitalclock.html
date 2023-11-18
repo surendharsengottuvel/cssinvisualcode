@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digitalclock</title>
+</head>
+<style>
+    body
+    {
+        background-color: aqua;
+        text-align: center;
+    }
+    #suren
+    {
+        margin-top: 20%;
+    }
+    #innertimer
+    {
+        border: 2px black;
+        padding: 2rem;
+        background-color:blue;
+    }
+</style>
+<body>
+    <div id="suren">
+        <div id="innertimer">
+            <span id="hour" value="0">00</span>
+            <span>:</span>
+            <span id="minute">00</span>
+            <span>:</span>
+            <span id="second">00</span>
+            <span id="anti"></span>
+        </div>
+    </div>
+</body>
+<script>
+  let hour=document.getElementById("hour")
+  let minute =document.getElementById("minute")
+  let second=document.getElementById("second")
+  let PM=  document.getElementById('anti')
+   
+   setInterval(updatingfunction, 500);
+    function updatingfunction()
+    {
+        let getting=new Date()
+        let timehour=(getting.getHours())
+        if(timehour>=13)
+        {
+            PM.innerHTML="PM"
+        }
+        else
+        {
+            PM.innerHTML="AM"
+        }
+        let timeminute=zerofunction(getting.getMinutes())
+        let timeseconds=zerofunction(getting.getSeconds())
+        minute.innerHTML=timeminute
+        second.innerHTML=timeseconds
+        if(timehour>12)
+        {
+            timehour=timehour-12
+            hour.innerHTML=zerofunction(timehour)
+        }
+    }
+    function zerofunction(num)
+    {
+        return num<10?"0"+num:num
+    }
+   
+</script>
+</html>

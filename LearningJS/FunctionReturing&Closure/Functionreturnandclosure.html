@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function returning and closure</title>
+</head>
+<body>
+    <h1>Function returning and closure</h1>
+    
+
+    <script>
+        let firstgive=100;
+        function myfunction()
+        {
+            console.log(firstgive)
+        }
+        myfunction()
+        firstgive=200;
+        function secondfun()
+        {
+            console.log(firstgive)
+        }
+        secondfun()
+
+        function outerfun()
+        {
+            let outervariable='outer function variable value'
+           function innerfunction()
+           {
+            let innervariable='inner function variable value'
+            console.log(outervariable) //here we can access outter function variable  
+            console.log(innervariable) //this is called lexical scoping - inner scope can acces outer varibale 
+            
+           }
+           innerfunction() 
+        }
+        outerfun()
+
+        let globalvariable='globalvariable'
+        
+        function firstfunction() 
+        {
+            let localvariable='its my local variable'
+            function secondfunction() 
+            {
+                let localinnervariable='its my innervariable function'
+                console.log(globalvariable)//globalvariable //notes here we can accessing globalvariable also
+                console.log(localvariable) //its my local variable //
+                console.log(localinnervariable) //its my innervariable function
+            }
+            secondfunction() //if you creating inside a function one function need to call that in first function 
+        }
+        firstfunction()
+
+        //let see another examble
+
+        function parentfunction(x)
+        {
+            function childfunction(y)
+            {
+                console.log(x+y)
+
+            }
+            return childfunction
+        }
+
+       let returnfunc= parentfunction(7)
+       returnfunc(100) //=107
+
+       returnfunc(1000) //==1007
+
+       function fatherfunction(name)
+       {
+        return function daughterfunction(daughtername)
+        {
+            console.log("The father name is "+name +" & " +"The Daughter name is "+ daughtername)
+        }
+       }
+
+       let returnvalue=fatherfunction('Sendottuvel')
+       console.log(returnvalue)
+       returnvalue('Devi Priya')
+
+
+        
+
+
+    </script>
+    
+</body>
+</html>

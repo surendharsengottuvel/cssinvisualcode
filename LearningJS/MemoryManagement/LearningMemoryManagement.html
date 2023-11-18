@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Management</title>
+    <style>
+        li
+        {
+            list-style-position:inside;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1>Data types</h1>
+    <ul>
+       <ul>
+        <h2>Primitive Data type</h2>
+        <li>String</li>
+        <li>number</li>
+        <li>bigint</li>
+        <li>Boolean</li>
+        <li>undefined</li>
+        <li>symbol</li>
+        <li>null</li>
+       </ul>
+       <br>
+       <ul>
+        <h2>Reference types</h2>
+        <li>arrays</li>
+        <li>functions</li>
+        <li>all Objeccts =(math,date,reduce...)</li>
+       </ul>
+    </ul>
+    <script>
+        let bignumber= 9797593274598432759473n
+        console.log(typeof(bignumber)) //bigint
+        let anotherbignumber=BigInt(490738834348934893)
+        console.log(typeof(anotherbignumber)) //bigint
+
+        //bigint is manydigits of number having variable need to put end of the number 'n'
+        //or before that variable BigInt(9379872395739)
+
+        /*
+        In java script memeory two segment is there
+        (i) =>Stack
+        (ii) => Heap
+        */
+       //(i) Stack segment
+       //***** all the primitive date type will stored in the Stack segment
+       let a=100 //it will store in the stack location
+       console.log(a) //100
+       a=200 //
+       console.log(a) //200
+       //first a=100 stored in the stack segment like somestoage=100 why here i am used somestoage
+       //because a is also note saved in memory only the value will store
+       //then you changed a=200 then that sometoage place in stack it will stoore somestoage=200
+
+       //now 
+       let b=a // here another address(somestorage) will create and stoare 200
+       b=300 //now the above createed somestoage place will change the value as 300
+
+       //(ii) Heap segment
+       //*** alll the reference types will store in the Heap segments
+       //(example(i))
+       let arrayone=['a','b','c','d']
+       let arraytwo=arrayone 
+       console.log(arraytwo)
+       arrayone[0]='z'
+       console.log(arrayone) //(4) ['z', 'b', 'c', 'd']
+       console.log(arraytwo) //(4) ['z', 'b', 'c', 'd']
+       arraytwo[3]='y'
+       console.log(arrayone) //(4) ['z', 'b', 'c', 'y']
+       console.log(arraytwo) //(4) ['z', 'b', 'c', 'y']
+       //(example(ii))
+       let objectone={name:'Naveen', age:25}
+       console.log(objectone) //{name: 'Naveen', age: 25}
+       let objecttwo=objectone
+       console.log(objecttwo) //{name: 'Naveen', age: 25}
+       objectone['name']='Naveen Kumar'
+       console.log(objectone) //{name: 'Naveen Kumar', age: 25}
+       console.log(objecttwo)//{name: 'Naveen Kumar', age: 25}
+       objecttwo['age']=30
+       console.log(objectone) //{name: 'Naveen Kumar', age: 30}
+       console.log(objecttwo) //{name: 'Naveen Kumar', age: 25}
+
+       //where because here while while obj1=obj2
+       //for the both object will store in heap for only one time with same address in the stack
+       //so that why only this happen
+
+    </script>
+</body>
+</html>

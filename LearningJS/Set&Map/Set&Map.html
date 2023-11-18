@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set and Map Learning</title>
+</head>
+<body>
+    <h1>Set(Object) and Map Learning in Java Script</h1>
+    <br>
+    <br>
+    <h3>Note: Set Method will provide output like object type {}</h3>
+    <ul>
+        <li>First create an object then need to add use obj.add(values)</li>
+        <li>You can provide array of value in to the set () paranthasis</li>
+        <li>Set method not accept duplicate value</li>
+    </ul>
+    <h3>Note: Map Method will provide output like object type {}</h3>
+        <ul>
+            <li>first creat an object then need to use set key for adding values</li>
+            <li>But here we need give two values one is (key) another one is (value) obj.set(key,value) </li>
+            <li>In this map method you cant give single dimention array because it will as (key,value)
+                so you can give two dimentional array[['a',1],['b',2]] as input
+            </li>
+            <li>Note here key value might be unique, if you provide again same key it will take second
+                time given value
+            </li>
+        </ul>
+
+    <script>
+        //Note set will accept only unique value, not accpet repeated value
+        let simplearray=[1,2,3,1,2,5,3,'a','c','a',3,1]
+
+        //let setspread=new Set(...simplearray) while speading its not working
+
+        let setvalue=new Set(simplearray)
+        console.log(setvalue) //Set(6) {1, 2, 3, 5, 'a', 'c'}
+        console.log(simplearray) // [1, 2, 3, 1, 2, 5, 3, 'a', 'c', 'a', 3, 1]
+
+        let newvalue=new Set()
+        newvalue.add('a')
+        newvalue.add(4)
+        newvalue.add(['a', 'c'])
+        newvalue.add(5)
+        newvalue.add(['a', 'c'])
+        newvalue.add(9)
+        newvalue.add('c')
+        newvalue.add('a')
+        newvalue.add('d')
+        newvalue.add('c')
+        console.log(newvalue) //Set(8) {'a', 4, Array(2), 5, Array(2), …}
+        //note above both array added but bothe having same value but added
+        // why think because previous class we learned reference and primite type memory storage
+        // that why both added
+        console.log(newvalue.has(4)) //true
+        
+       // set property having many type like has, deleete, key, ... learn
+       let nearray=Array.from(newvalue) //note setvalue(object) will convert as array using Array.form
+       console.log(nearray) //(8) ['a', 4, Array(2), 5, Array(2), 9, 'c', 'd']
+
+
+       //Map Learningg
+       //Map objeccts are collections of
+       //key-value pairs.
+       //A key in the Map may only occur once
+       //key or value can be object
+       let mapping=new Map();
+       mapping.set('a', 1)
+       mapping.set('b', 2)
+       mapping.set('c', 1)
+       console.log(mapping) //Map(3) {'a' => 1, 'b' => 2, 'c' => 1} 'a'=1 but next ime 'a'=3 so it take that last value3
+       mapping.set('a', 3)
+       console.log(mapping) //Map(3) {'a' => 3, 'b' => 2, 'c' => 1} map does not accept dupicate key value
+
+
+       let onearrya=[['a',2],['b',3],['a',5],['c',3],['b',3]]
+
+       let twodimentional=new Map(onearrya)
+       console.log(twodimentional) //Map(3) {'a' => 5, 'b' => 3, 'c' => 3}
+
+       for(let value of twodimentional)
+       {
+        console.log(value) //output will get like an varry ['a', 5] ['b',3]['c',3]
+       }
+
+       for(let [key,value] of twodimentional)
+       {
+        console.log(key) //a b c
+        console.log(value) //5 3 3
+       }
+
+       twodimentional.forEach((key, value)=>
+       {
+        console.log('key '+key +'and'+ 'value '+value)
+       })
+
+
+       //myworkout
+
+       let setcreating=new Set();
+       //setcreating.add(1,2,3,4) you cant add like this
+       setcreating.add(1)
+       setcreating.add(2)
+       setcreating.add(2)
+       console.log(setcreating) //{1,2}
+       console.log(setcreating.clear()) //undefined //all cleared
+       setcreating.add(3)
+       setcreating.add(3)
+       setcreating.add(3)
+       console.log(setcreating) //{3}
+       //*********
+       ///
+       ////Important
+       let newaryy=Array.from(setcreating)
+       console.log(newaryy) //[3]
+
+       //let onevariable={1,2,3} you can create like this
+       let onevariable=[1,2,3] //you can save group of value in array only, cant save like above mentioned object
+       //you cant can set method to conver to tow object value
+       let newobjectlike =new Set(onevariable)
+       console.log(newobjectlike) //{1,2,3} 
+        
+        
+
+    </script>
+</body>
+</html>

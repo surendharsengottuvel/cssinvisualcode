@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning Object Oriented Programs</h1>
+    <script>
+        class User //baseclass, parentclass, superclass
+        {
+            static numberofname=0 //static
+            constructor(name, age)
+            {
+                //_name and _age are instance varibale //because every to while creating object
+                this._name=name  //contrustur calling so this called instance variable
+                this._age=age
+                User.numberofname++ //here in construrct we are accessiing static varibale
+            }                       //its static right so while using inside construct we need to user classname.(User.)
+            ToLogin()
+            {
+                console.log('you are successfully logged in')
+            }
+            ToLogout()
+            {
+                console.log('your logged out')
+            }
+            static totannumber()
+            {
+                console.log('Total user',User.numberofname)
+            }
+        }
+        let Firstperson=new User('Santhi', 45)
+        let Secondperson=new User('Sengottuvel', 46)
+        //console.log('NO of user', numberofname) here also we need to user User.numberofname
+        console.log('NO of user', User.numberofname) //'NO of user 2'
+        User.totannumber() //Total user 2 //while calling static method also need use (Use.)
+        //you cant access like below
+        //User.ToLogin()
+        Firstperson.ToLogin() //this only you can use
+
+        console.log(Math.sqrt(4)) //2
+        //here Math is class and square is static method of Math class
+        class PaidUser extends User//Paiduser=>derived class, childclass, subclass
+        {
+            constructor(name,age)
+            {
+                super(name,age)
+                this._age=age
+                this._name=name
+            }
+            extraspecility()
+            {
+                console.log('you can use this website without interupt advertisement')
+            }
+            ToLogin() //not parent class also having ToLogin() child class als having Tologin()
+            { //this is called method overrriding //note js will first see drived class method if there not that
+                console.log('Welcome to you Paid User') //method there only it go toparent class
+                return this
+            }
+        }
+        let newpaiduser1=new PaidUser('Pushpa', 70)
+        console.log(User.numberofname) //3
+
+        //Method Chaining //while using this noone method not return anyting
+        //newpaiduser1.ToLogin().extraspecility() //this is called method chaining but here it not working
+        //beccause asper proceduer before useing extraspeciali() need to used object name right
+        //see hhow to used method chaining below
+ 
+        newpaiduser1.ToLogin().extraspecility() //while using this ToLogin() return something
+        //while using method chaing first called method ToLogin() must be return method then only method
+        //chaingin work
+        //outputis
+        //'Welcome to you Paid User'
+        //'you can use this website without interupt advertisement'
+
+
+        //wrapper class
+        let nameis=new String('Surenthiran')
+        console.log(typeof(nameis)) //Objecct
+        let nameinstring='Surenthiran'
+        console.log(typeof(nameinstring)) //String
+
+        //IN java script except primitive data type all are objecct
+        //Even primitive data types also placed in object see above new string method
+
+        let musicdirect=new String('AR Rahman')
+        console.log(musicdirect) //String {'AR Rahman'}=>while clicking this i will show protype
+        //[while clicking object or name] if it shows [prototype] it is object
+        
+    </script>
+</body>
+</html>

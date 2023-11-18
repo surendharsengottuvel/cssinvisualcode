@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Learning</title>
+</head>
+<body>
+    <h1>Prototype Learning & Getter and Setter</h1>
+    
+    <script>
+        function User(name,age)
+        {
+            this.name=name
+            this.age=age
+            // this.login=function()
+            // {
+            //     console.log('you are logged in')
+            // }
+        }
+        let firstuser=new User('Devi', 23);
+        console.log(firstuser) //output is login is in the fnction not in prototype this not crt way
+
+        User.prototype.login=function()
+        {
+            console.log('successfully logged in')
+        }
+        console.log(firstuser) // look no login function is in propto type
+
+
+        //Get and Set Method Learning
+
+        class Familydetails
+        {
+            static totalmember=0
+            constructor(name,age)
+            {
+                this._name=name
+                this._age=age
+                Familydetails.totalmember++
+            }
+            get name()
+            {
+                return this._name
+            }
+            set name(name)
+            {
+                this._name=name
+            }
+            get age()
+            {
+                return this._age
+            }
+            set age(age)
+            {
+                this._age=age
+            }
+            static totalmemberinfamily()
+            {
+                console.log(Familydetails.totalmember)
+            }
+        }
+        let Fatherdetails=new Familydetails()
+        console.log(Fatherdetails.name) //undefined
+        let Grandmather=new Familydetails('pushpa', 50)
+        Familydetails.totalmemberinfamily()
+        Fatherdetails.name="Sengottuvel"
+        console.log(Fatherdetails.name) //sengottuvel
+
+        
+
+
+    </script>
+</body>
+</html>
