@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynch & Await</title>
+</head>
+<body>
+    <h1>Asynch & Await</h1>
+    <h3>When you are using await in a function that function before need to asynch</h3>
+
+    <script>
+        function onefunction()
+        {
+            return 'Welcome to the java script world'
+        }
+        console.log(onefunction()) //Welcome to the java script world
+
+
+        async function secondfunction()
+        {
+            return 'Welcome to asynch function'
+        }
+        console.log(secondfunction()) //Promise {<fulfilled>: 'Welcome to asynch function'}
+            //while using asynch function promise only return the return value, not function
+
+        
+           function asynchlearn(){ 
+            return new Promise((resolve, rejecct)=>
+            {
+                let result=false
+                if(result)
+                {
+                    setTimeout(resolve,5000,"Logged in") //her logged in argument parameter value
+                }
+                else
+                {
+                    rejecct('logout')
+                }
+            })}
+
+            async function gettingfunction()
+            {
+                try{
+                console.log('Welcome')
+                let waiting= await asynchlearn()
+                console.log(waiting)
+                console.log('bye')}
+                 catch(error){console.log(error)}//promise method does want error check but in asynch method we 
+            }                      //need to use try catch because in asynch method value is true
+            gettingfunction()    //it will run successfully, it reject method need to youse try and catch   
+
+
+
+            //**** Here Own workoutting Promise only by myself***//
+
+            function promisecreating(nav){
+            return new Promise((resolve, reject)=>
+            {
+                if(nav=="Mani")
+                {
+                    firstcallback()
+                }
+                else
+                {
+                    secondcallback()
+                }
+
+            })}
+
+            promisecreating("Naveen").then(firstcallback)
+            .catch(secondcallback)
+
+            function firstcallback()
+            {
+                console.log('logged in successfully')
+            }
+            function secondcallback() 
+            {
+                console.log('failed')
+            }
+
+
+
+    </script>
+</body>
+</html>

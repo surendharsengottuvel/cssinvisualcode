@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise and asynch difference</title>
+</head>
+<body>
+    <h1>Promise and asynch Difference</h1>
+    <ul>
+        As per my Opinion
+        <li>while using PROMISE method it will function like Asynchronize <b>if you use set time function(1000 sec)
+        it will execution first set, second step is 2000sec means it will go third setp then after time out step 2 work after time 
+        </b></li>
+        <li>while using ASYNCH method it will function like synchronize <b>first execute step one then second step is
+            2000 second means after 2000 second completed second execute and then only move the third step
+        </b></li>
+    </ul>
+    <script>
+        //Promise methid first
+        // function promiseusing(args)
+        // {
+        //     return new Promise((resolve, reject)=>
+        //     {   
+                
+        //         if(args=="Logout")
+        //         {
+        //             setTimeout(sucessfunction,3000,"HI")
+        //             console.log('success fucntion or resolved function is working')
+        //         }
+        //         else
+        //         {
+        //             setTimeout(rejectfunction,3000,"BYE")
+        //             console.log("Reject or failed function is working")
+                    
+        //         }
+        //     })
+        // }
+        // promiseusing("login").then(sucessfunction)
+        // .catch(rejectfunction)
+        // function sucessfunction(args)
+        // {
+        //     console.log(args)
+        // }
+        // function rejectfunction(args)
+        // {
+        //     console.log(args)
+        // }
+        //before read below read out html code
+        //promiseuing("login") 
+        //output : success fucntion or resolved function is working , HI=>Hi will come after 3 second
+        //promiseuing("Loggein or anything")
+        //output : Reject or failed function is working, BYE => BYE=> BYE will come after 3 second
+
+
+        //asynch and await using
+
+       
+            function asynchlearn(){
+            return new Promise((resolve, rejecct)=>
+            {
+                let result=false
+                if(result)
+                {
+                    setTimeout(resolve,5000,"Logged in") //her logged in argument parameter value
+                }
+                else
+                {
+                    setTimeout(rejecct,2000,"Logged out")
+                }
+            })
+            }
+            async function gettingfunction()
+            {
+                try{
+                console.log('Welcome')
+                waiting= await asynchlearn()
+                console.log(waiting)
+                console.log('bye')}
+                 catch(error)
+                 {console.log(error)} 
+            }                      
+            gettingfunction() //if result if true=>the out is
+                            //=> welcome , Logged in, after BY here we used 5000 second but
+                            //after completed 5000 second and logged in after only by working this is asynch
+                            
+                            //if result if false
+                            // first welcome, Logged out, here not working bye because is error error fun only work
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Clock</title>
+</head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>
+    body
+    {
+        background-color: rgb(240, 240, 85);
+        text-align: center;
+        text-decoration: solid;
+    }
+    div > h1
+    {
+        margin-top: 10%;
+    }
+    div > button
+    {
+        margin-top: 3%;
+    }
+</style>
+<body class="text-light">
+    <div>
+        <div>
+            <h1>Stop Clock</h1>
+        <h2>MSV Private Limited</h2>
+        </div>
+    </div>
+    <div class="fs-2">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="minute">00</span>
+        <span>:</span>
+        <span id="second">00</span>
+        <span>:</span>
+        <span id="millisec">00</span>
+    </div>
+    <div>
+        <button class="btn btn-outline-primary col-1" id="start">START</button>
+        <button class="btn btn-outline-primary col-1" id="stop">STOP</button>
+        <button class="btn btn-outline-primary col-1" id="reset">RESET</button>
+    </div>
+    <script>
+        let hours=document.getElementById("hour")
+        let minutes=document.getElementById("minute")
+        let seconds=document.getElementById("second")
+        let millisecs=document.getElementById("millisec")
+
+        let tostart=document.getElementById("start")
+        let tostop=document.getElementById("stop")
+        let toreset=document.getElementById("reset")
+        let getting=new Date()
+        
+
+        let count= 0;
+        let second=0;
+        let minute=0;
+        let hour=0;
+        let timer=null;
+        
+        function stopWatch() 
+        {
+            if(timer)
+            count++
+            if(count>99)
+            {
+                second++
+                count=0
+            }
+            if(second==60)
+            {
+                second=0
+                minute++
+            }
+            if(minute==60)
+            {
+                minute=0
+                hour++
+            }
+            millisecs.innerHTML=count
+            seconds.innerHTML=togetdoubledoubt(second)
+            minutes.innerHTML=togetdoubledoubt(minute)
+            hours.innerHTML=togetdoubledoubt(hour)
+            }
+
+        tostart.onclick=()=>
+        {
+            timer=true
+            stopWatch()
+        }
+
+        tostop.onclick=()=>
+        {
+            timer=false
+        }
+        
+        toreset.onclick=()=>
+        {
+            window.location.reload()
+        }
+
+        setInterval(stopWatch, 10)
+
+        function togetdoubledoubt(num)
+        {
+            return num<10?"0"+num:num
+        }
+
+        
+
+
+
+    </script>
+
+    
+</body>
+</html>

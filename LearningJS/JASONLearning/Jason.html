@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Learning</title>
+</head>
+<body>
+    <h1>Jason Learning</h1>
+    <script>
+        let jason1="suren"
+        let Jason2 =2
+        let jason3= true
+        let jason4=[1,2,3,"suren"]
+        let jason5={"name":"Suren",
+                    "age":26,
+                    "male":true
+                    }
+        let arrayofobject=[{"name":"Suren",
+                    "age":26,
+                    "male":true
+                    },
+                    {"name":"Naveen",
+                    "age":26,
+                    "male":true},
+                    {"name":"Yuva",
+                    "age":26,
+                    "male":false}
+                    ]
+        console.log(arrayofobject) //(3) [{…}, {…}, {…}]
+        let stringvalue=`[{"name":"Suren",
+                    "age":26,
+                    "male":true
+                    },
+                    {"name":"Naveen",
+                    "age":26,
+                    "male":true},
+                    {"name":"Yuva",
+                    "age":26,
+                    "male":false}
+                    ]`
+                    console.log(stringvalue)
+
+                //output is 
+                /*
+                [{"name":"Suren",
+                    "age":26,
+                    "male":true
+                    },
+                    {"name":"Naveen",
+                    "age":26,
+                    "male":true},
+                    {"name":"Yuva",
+                    "age":26,
+                    "male":false}
+                    ] 
+                */
+              let stringtoobj= JSON.parse(stringvalue)//[{…}, {…}, {…}]
+               console.log(stringtoobj)
+              let objecttostring=JSON.stringify(stringtoobj)
+              console.log(objecttostring)
+              //[{"name":"Suren","age":26,"male":true},{"name":"Naveen","age":26,"male":true},{"name":"Yuva","age":26,"male":false}]
+
+                    
+    </script>
+</body>
+</html>

@@ -18,8 +18,10 @@
         
             while(true)
             {
-                yield index++
+                yield index++    
             }
+            
+            
         }
         let gent= gettingrandonvalue();
         console.log(gent.next().value)
@@ -76,7 +78,6 @@
         let Mainfunction=(callbackconsolefun)=>
         {
             callbackconsolefun('Naveen')
-            
         }
         Mainfunction(consolefun) //note here you only called function name yu declarted name value inside the main function
         Mainfunction(innnerhtmalfun) //note here you only called function name yu declarted name value inside the main function

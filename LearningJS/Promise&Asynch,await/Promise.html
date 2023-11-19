@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Learning</title>
+</head>
+<body>
+    <h1>Learning Promise</h1>
+
+    <script>
+        //promise is an object
+        let firstpromise=new Promise((success, result)=> //in promise inside the promise() need to
+        {                                               //declare of function with 2 paramater, that
+            let loggingin=false                     //parameter might be return function
+            if(loggingin)
+            {
+                success()
+            }
+            else
+            {
+                result()
+            }
+        })
+        
+
+       firstpromise.then(function success()
+        {
+            console.log('successful output')
+        })
+        .catch(function result()
+        {
+            console.log('your access is failed')
+        })
+
+        let outputis=0;
+        let GettingODDorEven=new Promise(
+            (evenfunction, oddfunction,)=>
+            {
+                let outputis=Math.floor(Math.random()*101)
+                
+                execute =(outputis%2==0)
+                
+                if(execute)
+                {   
+                    evenfunction(outputis) //here we are providing argumennt
+                    anotherfun(outputis)
+
+                }
+                else
+                {
+                    
+                    oddfunction(outputis)
+                }
+            })
+
+        GettingODDorEven.then(function multipleofdle(out)
+        {
+            console.log('its even number', out)
+        })
+        .then((out)=>console.log(`random getting value`))
+        .catch(function multipleofnotdouble(out)
+        {
+            console.log('its odd number',out)
+        })
+
+        //below i am returning promise for function //note find difference above and below
+
+        function onefunction()
+        {
+            return new Promise((pass, fail)=>
+            {
+                let result=true
+                if(result)
+                {
+                    topass()
+                }
+                else
+                {
+                    reasonfail()
+                }
+            })
+        }
+        onefunction().then(topass)
+        .catch(reasonfail)
+
+        function reasonfail()
+        {
+            console.log('you didnot focus you studies')
+        }
+        function topass()
+        {
+            console.log('super')
+        }
+
+        //if there is many promise function is ther  you can use promise.all promise any... any is ther learn
+
+        let chainone=new Promise((reached, notreached)=>
+        {
+            destination=true
+            if(destination)
+            {
+                reached("Naveen reached successfully")
+            }
+            else
+            {
+                notreached("Naveen not reached")
+            }
+        })
+
+        let chaintwo=new Promise((reached, notreached)=>
+        {
+            let destination=false
+            if(destination)
+            {
+                reached("Mani is reached")
+            }
+            else
+            {
+                notreached("Mani not reached")
+            }
+        })
+
+        Promise.all([chainone, chaintwo]) //not while calling all is success then only it willl so[reaced, reaced]
+        .then(function reach(message)  //if any one of this fail, it will show only failed //to show all status
+        {                               //use promise.allsettiled
+            console.log(message)
+        })
+        .catch(function notreached(message)  //this promise out it is "mani not reached" 
+        {                                   //because promise.all anyone promise failed it will show only faied
+            console.log(message)
+        })
+         //promise.all , promise.allsettled, promise.any, promise.race() use   
+        //promise having three status pending,resolved,rejected
+
+        //promise.race() is cheking with if you using settime also it will give if first first settle
+        //if first is ture it will give first value, second is second and hving time it will give that settle time without
+        
+        Promise.allSettled([chainone, chaintwo]) 
+        .then(function reach(message)  
+        {                               //note whille using promise.allsettiled it will show all promise result
+            console.log(message)    //result is:[{…}, {…}]
+        })
+        .catch(function notreached(message)
+        {
+            console.log(message)
+        })
+
+        //
+        Promise.race([chainone, chaintwo]) 
+        .then(function reach(message)  
+        {                               
+            console.log(message)  
+        })
+        .catch(function notreached(message)
+        {
+            console.log(message)
+        })
+
+
+
+    </script>
+</body>
+
+</html>

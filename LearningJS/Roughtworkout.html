@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+       function itwillcall(pars) 
+       {
+       console.log("this is itwillcall function parameter "+pars) 
+       }
+
+       function itwillsecondcall(params) 
+       {
+        let getting=document.querySelector("h1")
+        getting.innerHTML=params
+       }
+
+       function calling(onefunction)
+       {
+            onefunction("Naveen")
+       }
+       calling(itwillcall)
+       calling(itwillsecondcall)
+
+       let onearry=["Mani", "Ravi", "Kavi", "Pavi", "Yuvi"]
+       console.log(onearry)
+
+       onearry.forEach((value,index,array)=>{array[index]=value.toLocaleUpperCase()})
+       console.log(onearry)
+
+       let secondarr=['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+        console.log(secondarr) //(5) ['Surenthiran', 'Santhi', 'Sengottuvel', 'Pushpa', 'Devi']
+
+        secondarr.forEach(toupperfun)
+        function toupperfun(value,index,array)
+        {
+            array[index]=value.toUpperCase()
+        }
+        console.log(secondarr) //(5) ['SURENTHIRAN', 'SANTHI', 'SENGOTTUVEL', 'PUSHPA', 'DEVI']
+
+       function Fahter(params) 
+       {
+       console.log("Father name is", params) 
+       }
+       function calling(calls) 
+       {
+            calls("Senogdu")
+       }
+       calling(Fahter)
+
+       let exercisearray=[['a', 'b', 'c'],['c','d','f'],['d','f','g']]
+
+
+let naveen= exercisearray.flat().reduce(
+     (accumator, currentvalue)=>
+     {
+        console.log(accumator[currentvalue])
+         if(accumator[currentvalue])
+         accumator[currentvalue]++
+         else
+         accumator[currentvalue]=1
+
+     return accumator
+     },{})
+     console.log(naveen)
+
+     let objectt={"name":1}
+     console.log(objectt["age"])
+
+
+    </script>
+</body>
+</html>
