@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arryay=[1,2,3,4,5,2,5,3,4]
+        console.log(arryay.length)
+        
+
+        
+        for(let i=0; i<arryay.length; i++)
+        {
+            for(let j=i+1; j<arryay.length; j++)
+            {
+                if(arryay[i]==arryay[j])
+                {
+                    arryay.splice(j,1)
+                }
+            }
+        }
+        console.log(arryay)
+
+        for(let i=1; i<10; i++)
+        {
+            for(let j=0;j<=10; j++)
+            {
+                console.log("*")
+            }
+
+        }    
+    </script>
+</body>
+</html>

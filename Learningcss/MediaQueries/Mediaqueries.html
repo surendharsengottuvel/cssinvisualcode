@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        p
+        {
+            text-indent: 20px;
+        }
+        .para1
+        {
+            background-color: aqua;
+        }
+        .para2
+        {
+            background-color: beige;
+        }
+        .para3
+        {
+            background: linear-gradient(90deg,yellow blue orange);
+        }
+        @media (min-width:763px)
+        {
+            .container p
+            {
+                width: 30%;
+                float: left;
+                padding: 10px;
+            }
+            .para3
+            {
+                background: linear-gradient(yellow, blue, orange);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste facilis placeat quae enim corrupti commodi consequatur nostrum temporibus consequuntur. Aliquam, dignissimos animi. Minima quibusdam, amet dolorum est ex velit unde explicabo ipsa ipsam obcaecati animi sit delectus. Odio eum illum laboriosam libero quos sit sint? At sit in beatae voluptatem corporis soluta iure delectus!</p>
+        <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus inventore sunt sint temporibus eaque. Ratione tempora nulla similique animi sapiente quaerat qui molestias facere blanditiis dolores architecto, sunt voluptatibus consequatur illo odio, obcaecati officia eaque ipsum. Vel molestias animi aliquam, minima sapiente, eveniet quam error veniam sit aut culpa necessitatibus sequi ullam et, non laborum?</p>
+        <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis iure hic incidunt doloremque velit. Qui, nam. Beatae quaerat delectus itaque? Officiis ducimus quis consequuntur, ut esse nisi? Laboriosam animi soluta, facere aspernatur, consectetur magnam magni maxime vitae reprehenderit possimus enim voluptate fuga ullam? Voluptate sed fugiat adipisci pariatur, tenetur consequatur, earum non commodi fugit esse, natus facere similique odio et dignissimos modi nam accusantium id excepturi velit maiores. Nihil iste tempora consectetur, incidunt temporibus fugiat doloremque quo libero beatae at aperiam, iure voluptas ratione cupiditate nisi hic quae illo quasi.</p>
+    </div>
+</body>
+</html>

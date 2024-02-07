@@ -51,10 +51,16 @@
         function convert()
         {
             const celciusvalue =  Number(document.getElementById('firstid').value)
+            console.log(celciusvalue)
             const fahrenheit =    celciusvalue*9/5+32
             let resultvalue = document.getElementById('Suren')
             resultvalue.innerHTML=fahrenheit.toFixed(2) + " degree fahrenheir"
+
+            console.log(document.querySelector("#firstid").value +"HI")
         }
+        console.log(document.getElementById("Suren"))
+
+        
     
     </Script>
     

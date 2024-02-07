@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectors Learning</title>
+</head>
+<body>
+    <h1 id="suren" value="poda dai">Hellow sir</h1>
+    <br>
+    <input type="text" name="" id="Mani">
+    <br>
+    <br>
+    <ul>
+        Friends
+        <li>Naveen</li>
+        <li>Suren</li>
+        <li>Mani</li>
+    </ul>
+    <button onclick="fun()">click</button>
+    <script>
+        function fun(){
+       let surendhar=document.querySelector("#suren").innerHTML
+       console.log(surendhar)}
+
+            
+
+       let z=0
+       function mainfunction(n)
+       {
+        if(n==1) return 1;
+          return n*mainfunction(n-1)      
+        }
+       console.log(mainfunction(4))
+       console.log(mainfunction)
+
+        let tofindproduction=(x)=>
+        {
+            let y=x
+            return y
+        }
+        let tofindpro=(y, tofindproduction)=>
+        {
+            console.log(y+tofindproduction(12))
+        }
+        tofindpro(23, tofindproduction)
+
+        let namearray=["Suren", "Naveen", "Mani"]
+
+        namearray.forEach(namearrayfun)
+
+        function namearrayfun(value,index,array)
+        {
+            array[index]=value.toUpperCase()
+        }
+        console.log(namearray)
+
+       let newa= namearray.map((element,index,array)=>{return element.concat("yyy")})
+
+        console.log(newa)
+       console.log("---------------------------")
+
+       function outerfunction(x)
+       {
+            function innerfunction(y)
+            {
+              console.log(x+y)      
+            }
+            return innerfunction
+       }
+       let outerfunctionouput=outerfunction(7)
+       outerfunctionouput(1000)
+
+       let reducelearning=["a","b","c","a","b","c","a","d"]
+
+       let founding=reducelearning.reduce(functionreduce,{})
+       function functionreduce(accumulator, cuvale)
+       {
+        
+            if(accumulator[cuvale])
+            accumulator[cuvale]++
+            else{
+            accumulator[cuvale]=1
+            }
+            return accumulator    
+       }
+       console.log(founding)
+    </script>
+    
+</body>

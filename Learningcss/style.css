@@ -7,13 +7,28 @@ h1
 {
     color: blue;
 }
-div > p
+div >p
 {
-    color: black;
+    color: firebrick;
 }
 
 div del
 {
     color: violet;
+}
+
+#suren
+{
+    color: rgb(244,12,222);
+    background-color: hsl(180, 12%, 64%);
+}
+#naveen
+{
+    color: #a878ba
+}
+#mani
+{
+    color: rgba(223, 223, 211, .9);
+    color: hsla(24, 34, 34, .1);
 }
 
